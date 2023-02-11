@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+
+{% load static %}
+<html class="wide wow-animation" lang="en">
+
+<head>
+  <title>Home</title>
+
+  <style>
+    .ie-panel {
+      display: none;
+      background: #212121;
+      padding: 10px 0;
+      box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+      clear: both;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    html.ie-10 .ie-panel,
+    html.lt-ie-10 .ie-panel {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ie-panel"><a href="https://windows.microsoft.com/en-US/internet-explorer/"><img
+        src="static/images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820"
+        alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a>
+  </div>
+
+
+  <!-- Swiper-->
+  <section class="section swiper-container swiper-slider swiper-slider-1" data-loop="true" data-autoplay="5000"
+    data-simulate-touch="false">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide context-dark" data-slide-bg="{% static 'images/tiger1.jpg' %}"
+        style="background-position: 10% 10%">
+        <div class="swiper-slide-caption section-lg">
+          <div class="container">
+            <div class="row justify-content-md-end">
+              <div class="col-11 col-sm-10 col-md-7 col-lg-6">
+                <div class="box-geometry">
+                  <div class="figure figure-1"
+                    data-parallax-scroll="{&quot;y&quot;: -150, &quot;x&quot;: 0,  &quot;smoothness&quot;: 50 }">
+                  </div>
+                  <div class="figure figure-2"
+                    data-parallax-scroll="{&quot;y&quot;: 50, &quot;x&quot;: 140,  &quot;smoothness&quot;: 50 }">
+                  </div>
+                  <h1><span class="big text-decorative-2p-white">Save</span><span class="font-weight-light">Wild
+                      Cats</span></h1>
+                  <p>Join Wildlife, the world’s leading charity foundation, which main goal is to help conserve and
+                    protect wild cats and other important animal species all over the globe.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide context-dark" data-slide-bg="{% static 'images/lion3.jpg' %}"
+        style="background-position: 10% 10%">
+        <div class="swiper-slide-caption section-lg">
+          <div class="container">
+            <div class="row justify-content-md-end">
+              <div class="col-11 col-sm-10 col-md-7">
+                <div class="box-geometry box-geometry-2">
+                  <div class="figure figure-1"
+                    data-parallax-scroll="{&quot;y&quot;: -150, &quot;x&quot;: 0,  &quot;smoothness&quot;: 50 }">
+                  </div>
+                  <div class="figure figure-2"
+                    data-parallax-scroll="{&quot;y&quot;: 50, &quot;x&quot;: 140,  &quot;smoothness&quot;: 50 }">
+                  </div>
+                  <h1><span class="big text-decorative-2p-white">make</span><span class="font-weight-light">Cats
+                      Safe</span></h1>
+                  <p>We work to help wild cats and other animals worldwide and you can create their future with us.
+                    Your donations will serve the great cause of serving animals globally!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Swiper Pagination-->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-counter"></div>
+    <!-- Swiper Navigation-->
+    <div class="swiper-button-prev fa-arrow-left"></div>
+    <div class="swiper-button-next fa-arrow-right"></div>
+  </section>
+  <!-- <section class="section section-sm section-sm-custom bg-gray-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 wow slideInDown">
+            <form class="rd-form rd-mailform rd-form-inline rd-form-dark rd-form-inline-custom"
+              data-form-output="form-output-global" data-form-type="subscribe" method="post"
+              action="bat/rd-mailform.php">
+              <div class="form-wrap d-flex">
+                <select class="form-input select2-dark" id="amount-value" name="gender" data-constraints="@Required"
+                  data-placeholder="Select an Amount" data-dropdown-class="select2-dark">
+                  <option label="placeholder"></option>
+                  <option>$100</option>
+                  <option>$250</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-wrap">
+                <input class="form-input" id="amount-name" type="text" name="name" data-constraints="@Required">
+                <label class="form-label" for="amount-name">Your Name</label>
+              </div>
+              <div class="form-wrap">
+                <input class="form-input" id="amount-email" type="email" name="email"
+                  data-constraints="@Email @Required">
+                <label class="form-label" for="amount-email">E-mail</label>
+              </div>
+              <div class="form-button">
+                <button class="button button-primary button-lg-custom" type="submit">Donate Now</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+  <section class="section section-lg bg-default">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-md-9 col-lg-7 wow-outer">
+          <div class="wow slideInDown">
+            <h2 class="heading-with-text-bg">Help Animals Worldwide<span
+                class="block-background-text text-decorative-black-20 big">our projects</span></h2>
+            <p class="text-gray-800-75 block-center" style="max-width: 650px;">Below are some of our recent charity
+              projects that helped us protect wild cat species and save them from from retaliatory killings in 28
+              countries.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row row-20 row-xl-50">
+        <div class="col-md-6 col-lg-4 wow-outer">
+          <div class="wow fadeInUp">
+            <div class="team-minimal">
+              <div class="team-minimal-figure"><img src="{% static 'images/giraffe.jpg' %}" alt="" width="370"
+                  height="395" /><a class="button button-primary team-minimal-button"
+                  href="{% url 'donate' %}">Donate</a>
+              </div>
+              <div class="team-minimal-caption">
+                <h4><a class="team-name" href="donate.html">Giraffe</a></h4>
+                <p>$340k Donated</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 wow-outer">
+          <div class="wow fadeInUp">
+            <div class="team-minimal">
+              <div class="team-minimal-figure"><img src="{% static 'images/cheetas.jpg' %}" alt="" width="370"
+                  height="295" /><a class="button button-primary team-minimal-button"
+                  href="{% url 'donate' %}">Donate</a>
+              </div>
+              <div class="team-minimal-caption">
+                <h4><a class="team-name" href="donate.html">Cheetahs</a></h4>
+                <p>$550K Donated</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 wow-outer">
+          <div class="wow fadeInUp">
+            <div class="team-minimal">
+              <div class="team-minimal-figure"><img src="{% static 'images/ele2.jpg' %}" alt="" width="370"
+                  height="395" /><a class="button button-primary team-minimal-button"
+                  href="{% url 'donate' %}">Donate</a>
+              </div>
+              <div class="team-minimal-caption">
+                <h4><a class="team-name" href="donate.html">Elephants</a></h4>
+                <p>$610k donated</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="parallax-container"
+    data-parallax-img="https://images.unsplash.com/photo-1540125895252-edefe1c0132e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80"
+    style="background-position: 10% 20%">
+    <div class="parallax-content section-lg section-lg-2 context-dark text-center overlay overlay-1">
+      <div class="container wow-outer">
+        <div class="wow slideInDown">
+          <h2><span class="big no-ls font-weight-bold">it's<span
+                class="text-decorative-2p-white">&nbsp;time&nbsp;</span>to act</span></h2><a
+            class="button button-xsm button-white" href="{% url 'blogs' %}">Read Blog</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-lg bg-default">
+    <div class="row justify-content-center text-center">
+      <div class="col-md-9 col-lg-6 wow-outer">
+        <div class="wow slideInDown">
+          <h2 class="heading-with-text-bg">Saved Animals<span
+              class="block-background-text text-decorative-black-20 big">gallery</span></h2>
+          <p class="block-center" style="max-width: 650px;">In our gallery, you can take a look at the photos of wild
+            cats and other animals that we’ve rescued and helped since our first day.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row row-30" data-isotope-group="gallery" data-lightgallery="group">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+        <div class="wow slideInDown">
+          <div class="gallery-item-classic"><img
+              src="https://images.unsplash.com/photo-1577175889968-f551f5944abd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              alt="" width="465" height="383" />
+            <div class="gallery-item-classic-caption"><a href="{% static 'images/saved.jpg' %}"
+                data-lightgallery="item">zoom<img src="{% static 'images/srhino.jpg' %}" alt="" width="465"
+                  height="383" /></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+        <div class="wow slideInDown">
+          <div class="gallery-item-classic"><img
+              src="https://images.unsplash.com/photo-1512988442538-a42600ac4634?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              alt="" width="465" height="383" />
+            <div class="gallery-item-classic-caption"><a href="{% static 'images/stiger.jpg' %}"
+                data-lightgallery="item">zoom<img src="{% static 'images/s2.jpg' %}" alt="" width="465"
+                  height="383" /></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+        <div class="wow slideInDown">
+          <div class="gallery-item-classic"><img src="{% static 'images/5.jpg' %}" alt="" width="465" height="383" />
+            <div class="gallery-item-classic-caption"><a
+                href="https://images.unsplash.com/photo-1588444179338-ac52e7716c95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                data-lightgallery="item">zoom<img
+                  src="https://images.unsplash.com/photo-1469998265221-245c7148df5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                  alt="" width="465" height="383" /></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+        <div class="wow slideInDown">
+          <div class="gallery-item-classic"><img
+              src="https://images.unsplash.com/photo-1584581893475-7e64f711bdcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              alt="" width="465" height="383" />
+            <div class="gallery-item-classic-caption"><a
+                href="https://images.unsplash.com/photo-1576014469133-208fb8981113?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                data-lightgallery="item">zoom<img
+                  src="https://images.unsplash.com/photo-1519866621564-2d83717d219c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                  alt="" width="465" height="383" /></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+        <div class="wow slideInDown">
+          <div class="gallery-item-classic"><img
+              src="https://images.unsplash.com/photo-1507178133921-e5c01f5954ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              alt="" width="465" height="383" />
+            <div class="gallery-item-classic-caption"><a
+                href="https://images.unsplash.com/photo-1588167056840-13caf6e4562a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                data-lightgallery="item">zoom<img
+                  src="https://images.unsplash.com/photo-1539613119332-934546db1e0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                  alt="" width="465" height="383" /></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+        <div class="wow slideInDown">
+          <div class="gallery-item-classic"><img
+              src="https://images.unsplash.com/photo-1556314754-4241385646f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              alt="" width="465" height="383" />
+            <div class="gallery-item-classic-caption"><a
+                href="https://images.unsplash.com/photo-1527328926905-0e20919963f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                data-lightgallery="item">zoom<img
+                  src="https://images.unsplash.com/photo-1587096640655-9c1dfa1eeae5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                  alt="" width="465" height="383" /></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+        <div class="wow slideInDown">
+          <div class="gallery-item-classic"><img
+              src="https://images.unsplash.com/photo-1505217963887-dc82a5951f1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              alt="" width="465" height="383" />
+            <div class="gallery-item-classic-caption"><a
+                href="https://images.unsplash.com/photo-1543183344-acd290d5142e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                data-lightgallery="item">zoom<img
+                  src="https://images.unsplash.com/photo-1587056649533-921ace8146d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                  alt="" width="465" height="383" /></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+        <div class="wow slideInDown">
+          <div class="gallery-item-classic"><img
+              src="https://images.unsplash.com/photo-1583467720616-4c343f530437?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              alt="" width="465" height="383" />
+            <div class="gallery-item-classic-caption"><a
+                href="https://images.unsplash.com/photo-1535684405415-f991bbab0866?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                data-lightgallery="item">zoom<img
+                  src="https://images.unsplash.com/photo-1535393857990-03242fe70580?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                  alt="" width="465" height="383" /></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-xxl-custom bg-gray-4 text-center text-lg-left">
+    <div class="container">
+      <div class="row row-50 justify-content-center justify-content-lg-between">
+        <div class="col-lg-6 pr-xl-5">
+          <div class="box-geometry-3">
+            <div class="figure figure-1"
+              data-parallax-scroll="{&quot;y&quot;: -20, &quot;x&quot;: 140,  &quot;smoothness&quot;: 70 }"></div>
+            <div class="figure figure-2"
+              data-parallax-scroll="{&quot;y&quot;: 50, &quot;x&quot;: -10,  &quot;smoothness&quot;: 60 }"></div>
+            <div class="figure figure-3"
+              data-parallax-scroll="{&quot;y&quot;: 50, &quot;x&quot;: -200,  &quot;smoothness&quot;: 80 }"></div><img
+              src="{% static 'images/collage1.jpg' %}" alt="" width="528" height="400" />
+          </div>
+        </div>
+        <div class="col-10 col-lg-5">
+          <div class="box-offset-1">
+            <h2 class="heading-with-text-bg">About Wildlife<span
+                class="block-background-text text-decorative-white-20 big">About Us</span></h2>
+            <div class="mt-35">
+              <p>Wildlife is devoted to the conservation of the world’s wild cats and dozens of other endangered
+                species.</p>
+              <p>Our team of leading biologists and law enforcement experts develop innovative strategies to address
+                the dire threats facing the wild animals globally.</p><a class="button button-xsm button-white"
+                href="{% url 'aboutus' %}">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="margin-bottom: -50px;">
+    <div id="container" style="text-align: center; width: 55%; margin: 50px auto; padding: auto; display: block;">
+      <h2 style="color: #FEBF1C; cursor: default; margin-top: 10px;">Statistics | Total Data: {{ sum }}</h2>
+      <canvas id="pie-chart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script>
+      var config = {
+        type: 'pie',
+        data: {
+          datasets: [{
+            data: {{data | safe}},
+            backgroundColor: [
+              '#F8B195', '#F67280', '#C06C84' , '#6C5B7B', '#255278', '#355C78'
+            ],
+          }],
+          labels: {{labels | safe}}
+        },
+        options: {
+          responsive: true,
+          scales: {
+            yAxes: [{
+              ticks: {
+                suggestedMin: 500,
+                suggestedMax: 1000
+              }
+            }]
+          }
+        }
+      };
+
+      window.onload = function () {
+        var ctx = document.getElementById('pie-chart').getContext('2d');
+        window.myPie = new Chart(ctx, config);
+      };
+    </script>
+  </section> 
+
+  <section class="section section-xl bg-default text-center position-relative">
+    <div class="container">
+      <div class="row row-50">
+        <div class="col-md-6 col-lg-4 wow-outer">
+          <div class="wow slideInLeft">
+            <div class="box-icon-classic">
+              <div class="box-icon-inner decorate-triangle decorate-color-secondary"><span
+                  class="icon-lg-big linearicons-shield icon-gray-800"></span></div>
+              <div class="box-icon-caption">
+                <h4><a href="#">qualified Team</a></h4>
+                <p>We have gathered a team of highly qualified animal protection experts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 wow-outer">
+          <div class="wow slideInDown">
+            <div class="box-icon-classic">
+              <div class="box-icon-inner decorate-circle decorate-color-secondary-2"><span
+                  class="icon-lg-big linearicons-paw icon-gray-800"></span></div>
+              <div class="box-icon-caption">
+                <h4><a href="#">protecting all Species</a></h4>
+                <p>Besides wild cats, we also aim to protect and save other species of wild animals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 wow-outer">
+          <div class="wow slideInRight">
+            <div class="box-icon-classic">
+              <div class="box-icon-inner decorate-rectangle decorate-color-primary"><span
+                  class="icon-lg-big linearicons-sun icon-gray-800"></span></div>
+              <div class="box-icon-caption">
+                <h4><a href="#">global Work</a></h4>
+                <p>Our organization works globally to help rescue more endangered species.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="parallax-container"
+    data-parallax-img="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fGxpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+    <div class="parallax-content section-xl context-dark text-center overlay overlay-2">
+      <div class="container">
+        <div class="row row-50">
+          <div class="col-sm-6 col-lg-3">
+            <article class="counter-classic counter-text-stroke">
+              <div class="counter-classic-main">
+                <div class="counter">50</div>
+              </div>
+              <p class="counter-text-stroke-title">Saved species</p>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="counter-classic counter-text-stroke">
+              <div class="counter-classic-main">
+                <div class="counter">92</div>
+              </div>
+              <p class="counter-text-stroke-title">Team members</p>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="counter-classic counter-text-stroke">
+              <div class="counter-classic-main">
+                <div class="counter">340</div>
+              </div>
+              <p class="counter-text-stroke-title">Daily donations</p>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="counter-classic counter-text-stroke">
+              <div class="counter-classic-main">
+                <div class="counter">4</div>
+              </div>
+              <p class="counter-text-stroke-title">Partners</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-lg bg-default">
+    <div class="container wow-outer">
+      <div class="text-center">
+        <h2 class="heading-with-text-bg">Latest News<span
+            class="block-background-text text-decorative-black-20 big">Latest news</span></h2>
+      </div>
+      <!-- Owl Carousel-->
+      <div class="owl-carousel owl-dots-dark wow fadeInUp" data-items="1" data-md-items="2" data-lg-items="3"
+        data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="30"
+        data-mouse-drag="false" data-autoplay="true">
+        {% for i in News %}
+        <div class="post-corporate">
+          <a class="badge post-corporate-badge" href="#">{{ i.created }}</a>
+          <h4 class="post-corporate-title"><a href="{% url 'readnews' i.id %}">{{ i.newsTitle }}</a></h4>
+          <div class="post-corporate-text">
+            <p>{{ i.newsContent|truncatechars:100 }}</p>
+          </div><a class="post-corporate-link" href="{% url 'readnews' i.id %}">Read more<span
+              class="icon linearicons-arrow-right"></span></a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="parallax-container" data-parallax-img="{% static 'images/Zebras.jpg' %}">
+    <div class="parallax-content section-xxl section-custom-1 context-dark text-center overlay overlay-3">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-9 col-lg-8 col-xl-7 wow-outer">
+            <div class="wow slideInDown">
+              <h2 class="heading-with-text-bg">Join Our Newsletter<span
+                  class="block-background-text text-decorative-white-60 big">Newsletter</span></h2>
+              <form class="rd-form rd-form-offset-1 rd-mailform rd-form-inline" method="POST" autocomplete="off"
+                action="{% url 'subscribeEmail' %}">
+                {% csrf_token %}
+                <div class="form-wrap">
+                  <input class="form-input" id="subscribe-form-email" type="email" name="sub-email">
+                  <label class="form-label" for="subscribe-form-email">E-mail</label>
+                </div>
+                <div class="form-button">
+                  <button class="button button-primary button-custom-1" type="submit">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-lg bg-default text-center">
+    <div class="container">
+      <div class="wow-outer">
+        <div class="wow slideInDown">
+          <h2 class="heading-with-text-bg">Our Partners<span
+              class="block-background-text text-decorative-black-20 big">Partners</span></h2>
+        </div>
+      </div>
+      <!-- Owl Carousel-->
+      <div class="owl-carousel dots-offset-lg" data-items="1" data-sm-items="2" data-md-items="3" data-dots-each="2"
+        data-lg-items="4" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="30"
+        data-mouse-drag="false" data-autoplay="true">
+        {% for i in Partners %}
+        <a class="box-sponsor box-sponsor-modern wow-outer" href="{{ i.Partnerlink }}">
+          <div class="wow fadeInUp"><img src="{{ i.Partnerimage.url }}" alt="" width="270" height="121" />
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  <!--LIVEDEMO_00 -->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-7078796-5']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') +
+        '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</body>
+
+</html>
+{% endblock %}

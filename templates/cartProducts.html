@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% load cart %}
+
+<link rel="stylesheet" href="{% static 'css/ecom.css' %}">
+
+<div class="">
+    <h2 class="marginFix">Your Items:</h2>
+</div>
+
+<div class="">
+    <table class="border tableSubFlex m-4 mt-5 p-5" style="width: 65%;" cellpadding="2">
+        <tbody>
+            <tr class="headText">
+                <td><b class="fontSizeInc">S.No.</b></td>
+                <td><b class="fontSizeInc">Title</b></td>
+                <td><b class="fontSizeInc">Image</b></td>
+                <td><b class="fontSizeInc">Quantity</b></td>
+                <td><b class="fontSizeInc">Price</b></td>
+                <td><b class="fontSizeInc">Total</b></td>
+                <td><b class="fontSizeInc">Remove</b></td>
+            </tr>
+            {% for i in Cart %}
+            <tr class="cartProducts">
+                <td>{{ forloop.counter }}</td>
+                <td><a href="{% url 'product' i.id %}" class="productTitleCart">{{ i.productTitle }}</a></td>
+                <td><img class="cartImgProduct" src="{{ i.productDisp.url }}" alt=""></td>
+                <td>{{ i|cart_quantity:request.session.cart }}</td>
+                <td>${{ i.productPrice }}</td>
+                <td>${{ i|totalPrice:request.session.cart }}</td>
+                <td>
+                    <form action="#" class="" method="POST">
+                        {% csrf_token %}
+                        <input hidden type="text" name="product_idd" value="{{ i.id }}">
+                        <input type="submit" value='&#10060;' class="quantityBtn" readonly>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <td><hr style="width: 65%; float: right;"></td>
+            <td><hr></td>
+            <td><hr></td>
+            <td><hr></td>
+            <td><hr></td>
+            <td><hr></td>
+            <td class="">
+                <button data-toggle="modal" data-target="#exampleModalCenter" style="text-transform: uppercase; width: 160px" class="addToCart">Check Out</button>
+            </td>
+        </tfoot>
+        <tfoot class="totalCart headText">
+            <th></th>
+            <th></th>
+            <th colspan=""><b>Total:</b></th>
+            <th colspan="2"></th>
+            <th><b>${{ Cart|totalPriceCart:request.session.cart }}</b></th>
+            <th></th>
+        </tfoot>
+    </table>
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Checkout</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            {% if user.is_authenticated %}
+            <form action="{% url 'loginCheckout' %}" id="myFormSubmit" method="post">
+                {% if not user.is_authenticated %}
+                <h4 class="text-center mb-2">You need to login first</h4>
+                {% endif %}
+                {% csrf_token %}
+                <div class="form-group">
+                <label for="">Address</label>
+                <input type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="submit-btn">
+                    <div style="width: 20% !important;" id="paypal-button-container"></div>
+
+                    <!-- Include the PayPal JavaScript SDK -->
+                    <script
+                        src="https://www.paypal.com/sdk/js?client-id=AcK29cNvZ7dD5zShYcvy0DIbSABOYNdRJK7AR8hGnk0bgLnmqNEvfGPu_b8Ri83WaQmsXPe61YvtP51d&currency=USD">
+                    </script>
+
+                    <script>
+                        // Render the PayPal button into #paypal-button-container
+                        paypal.Buttons({
+                            // Set up the transaction
+                            createOrder: function (data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        amount: {
+                                            value: '{{ Cart|totalPriceCart:request.session.cart }}'
+                                        }
+                                    }]
+                                });
+                            },
+                            // Finalize the transaction
+                            onApprove: function (data, actions) {
+                                return actions.order.capture().then(function (details) {
+                                    // Show a success message to the buyer
+                                    alert('Transaction completed by ' + details.payer.name
+                                        .given_name + '!');
+                                    document.getElementById("myFormSubmit").submit();
+                                });
+                            }
+                        }).render('#paypal-button-container');
+                    </script>
+                </div>
+            </form>
+            {% else %}
+            <div class="text-center">Please signin/signup to checkout!</div>
+            <br>
+            <div class="checkoutBtnFix">
+                <a href="{% url 'Signin' %}" class="btn btn-primary" class="text-center">Signin</a>
+                <a href="{% url 'Signup' %}" class="btn btn-primary"  class="text-center">Signup</a>
+            </div>
+            {% endif %}
+        </div>
+        </div>
+    </div>
+</div>
+
+</div>
+{% endblock %}
